@@ -4,16 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ComicScrip/wns-livecodings.git"
+    "url": "git+https://github.com/GrischK/Exercices-Alternance.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ComicScrip/wns-livecodings/issues"
+    "url": "https://github.com/GrischK/Exercices-Alternance/issues"
   },
-  "homepage": "https://github.com/ComicScrip/wns-livecodings#readme"
+  "homepage": "https://github.com/GrischK/Exercices-Alternance#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "sqlite3": "^5.0.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
