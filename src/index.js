@@ -28,7 +28,7 @@ const start = async () => {
   await dataSource.initialize();
   // inserting()
   // dataSource.getRepository(Wilder).save({ name: "First Wilder" }, { name: "Second Wilder" });
-  deleting();
+  // deleting();
   app.listen(3000, () => {
     console.log("Tout fonctionne parfaitement !");
   });
@@ -36,20 +36,20 @@ const start = async () => {
 
 start();
 
-const inserting = async () => {
-  await dataSource
-    .createQueryBuilder()
-    .insert()
-    .into(Wilder)
-    .values([{ name: "Timber" }, { name: "Phantom" }])
-    .execute();
-};
+// const inserting = async () => {
+//   await dataSource
+//     .createQueryBuilder()
+//     .insert()
+//     .into(Wilder)
+//     .values([{ name: "Timber" }, { name: "Phantom" }])
+//     .execute();
+// };
 
-const deleting = async () => {
-  await dataSource
-    .createQueryBuilder()
-    .delete()
-    .from(Wilder)
-    .where("id = :id", { id: ["6", "7", "8", "9", 10, 11, 12, 13] })
-    .execute();
-};
+// const deleting = async () => {
+//   await dataSource
+//     .createQueryBuilder()
+//     .delete()
+//     .from(Wilder)
+//     .where("id = :id", { id: ["6", "7", "8", "9", 10, 11, 12, 13] })
+//     .execute();
+// };

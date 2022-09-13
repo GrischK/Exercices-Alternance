@@ -18,8 +18,8 @@ module.exports = {
     dataSource
       .getRepository(Wilder)
       .find()
-      .then(() => {
-        res.send("Get wilders");
+      .then((wilders) => {
+        res.send(wilders);
       })
       .catch(() => {
         res.send("Error while getting wilder");
