@@ -14,13 +14,13 @@ app.use(express.json())
 //   res.send("Welcome");
 // });
 
-app.get("/api/wilder", wilderController.get)
+app.get("/wilders", wilderController.get)
 
-app.post("/api/wilder", wilderController.create)
+app.post("/wilders", wilderController.create)
 
-app.put("/api/wilder", wilderController.update)
+app.put("/wilders/:id", wilderController.update)
 
-app.delete("/api/wilder", wilderController.delete)
+app.delete("/wilders/:id", wilderController.delete)
 
 
 
