@@ -2,6 +2,7 @@ const express = require("express");
 const dataSource = require("./db.js").dataSource;
 const Wilder = require("./entity/Wilder");
 const wilderController = require("./controller/wilder")
+const skillsController = require("./controller/skill")
 
 const app = express();
 
@@ -22,6 +23,15 @@ app.put("/wilders/:id", wilderController.update)
 
 app.delete("/wilders/:id", wilderController.delete)
 
+app.get("/skills", skillsController.get)
+
+app.post("/skills", skillsController.create)
+
+app.put("/skills/:id", skillsController.update)
+
+app.delete("/skills/:id", skillsController.delete)
+
+app.post("/wilders/:id/skills/:id", wilderController.addSkill)
 
 
 const start = async () => {

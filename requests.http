@@ -25,3 +25,38 @@ Content-Type: application/json
 
 DELETE  http://localhost:3000/wilders/37
 
+
+###
+
+GET http://localhost:3000/skills
+
+
+###
+
+POST http://localhost:3000/skills
+Content-Type: application/json
+
+{
+    "name": "JS"
+}   
+
+
+###
+
+PUT http://localhost:3000/skills/1
+Content-Type: application/json
+
+{
+    "name":"React"
+}
+
+
+###
+
+DELETE  http://localhost:3000/skills/1
+
+
+###
+
+POST http://localhost:3000/wilders/29/skills/2
+Content-Type: application/json
