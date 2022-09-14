@@ -1,7 +1,7 @@
 import blank_profile from "../assets/images/blank_profile.png";
 import SkillCard from "./Skills";
 
-export default function Card({ name, skills, k }) {
+export default function Card({ name, skills }) {
   console.log(skills);
   return (
     <article className="card">
@@ -15,8 +15,8 @@ export default function Card({ name, skills, k }) {
       </p>
       <h4>Wild Skills</h4>
       <ul className="skills">
-        {skills.map((skill) => (
-          <SkillCard key={k} title={skill.title} votes={skill.votes} />
+        {skills.map((skill, index) => (
+          <SkillCard key={index} title={skill.title} votes={skill.votes} />
         ))}
       </ul>
     </article>

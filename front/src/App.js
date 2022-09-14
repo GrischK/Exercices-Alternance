@@ -54,9 +54,8 @@ function App() {
           {wildersData.map((wilder) => (
             <Card
               key={wilder.id}
-              k={wilder.id}
               name={wilder.name}
-              skills={[wilder.skills]}
+              skills={wilder.skills}
             />
           ))}
         </section>
