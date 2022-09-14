@@ -16,21 +16,15 @@ app.use(express.json())
 // });
 
 app.get("/wilders", wilderController.get)
-
 app.post("/wilders", wilderController.create)
-
 app.put("/wilders/:id", wilderController.update)
-
 app.delete("/wilders/:id", wilderController.delete)
-
 app.post("/wilders/:wilderId/skills/:skillId", wilderController.addSkill)
+app.delete("/wilders/:wilderId/skills/:skillId", wilderController.removeSkill)
 
 app.get("/skills", skillsController.get)
-
 app.post("/skills", skillsController.create)
-
 app.put("/skills/:id", skillsController.update)
-
 app.delete("/skills/:id", skillsController.delete)
 
 

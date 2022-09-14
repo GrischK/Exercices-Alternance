@@ -1,0 +1,36 @@
+GET http://localhost:3000/skills
+
+
+###
+
+POST http://localhost:3000/skills
+Content-Type: application/json
+
+{
+    "name": "React"
+}   
+
+
+###
+
+PUT http://localhost:3000/skills/1
+Content-Type: application/json
+
+{
+    "name":"Node"
+}
+
+
+###
+
+DELETE  http://localhost:3000/skills/1
+
+
+###
+
+POST http://localhost:3000/wilders/34/skills/2
+
+
+###
+
+DELETE http://localhost:3000/wilders/32/skills/2

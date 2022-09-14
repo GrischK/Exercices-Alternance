@@ -77,4 +77,24 @@ module.exports = {
       res.send("Error while adding skill to wilder");
     }
   },
+
+  removeSkill: async (req, res) => {
+    try {
+      const wilderToUpdate = await dataSource
+        .getRepository(Wilder)
+        .findOneBy({ id: req.params.wilderId });
+      console.log(wilderToUpdate);
+      const skillToDelete = await dataSource
+        .getRepository(Skills)
+        .findOneBy({ id: req.params.skillId });
+      wilderToUpdate.skills = wilderToUpdate.skills.filter(
+        (e) => e.id !== skillToDelete.id
+      );
+      await dataSource.getRepository(Wilder).save(wilderToUpdate);
+      res.send("Skill deleted to wilder");
+    } catch (err) {
+      console.log(err);
+      res.send("Error while deleting skill to wilder");
+    }
+  },
 };
