@@ -28,6 +28,16 @@ module.exports = {
     }
   },
 
+  getOne: async (req, res) => {
+    try {
+      const skills = await dataSource.getRepository(Skills).findOneBy({name});
+      res.send(skills);
+    } catch (err) {
+      console.error(err);
+      res.send("error while getting wilders");
+    }
+  },
+
   update: async (req, res) => {
     const { name } = req.body;
     if (name.length > 100 || name.length === 0) {

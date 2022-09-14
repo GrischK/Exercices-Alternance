@@ -23,6 +23,8 @@ app.put("/wilders/:id", wilderController.update)
 
 app.delete("/wilders/:id", wilderController.delete)
 
+app.post("/wilders/:wilderId/skills/:skillId", wilderController.addSkill)
+
 app.get("/skills", skillsController.get)
 
 app.post("/skills", skillsController.create)
@@ -31,7 +33,6 @@ app.put("/skills/:id", skillsController.update)
 
 app.delete("/skills/:id", skillsController.delete)
 
-app.post("/wilders/:id/skills/:id", wilderController.addSkill)
 
 
 const start = async () => {

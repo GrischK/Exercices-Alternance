@@ -37,7 +37,7 @@ POST http://localhost:3000/skills
 Content-Type: application/json
 
 {
-    "name": "JS"
+    "name": "React"
 }   
 
 
@@ -47,7 +47,7 @@ PUT http://localhost:3000/skills/1
 Content-Type: application/json
 
 {
-    "name":"React"
+    "name":"Node"
 }
 
 
@@ -58,5 +58,4 @@ DELETE  http://localhost:3000/skills/1
 
 ###
 
-POST http://localhost:3000/wilders/29/skills/2
-Content-Type: application/json
+POST http://localhost:3000/wilders/33/skills/2

@@ -64,11 +64,11 @@ module.exports = {
     try {
       const wilderToUpdate = await dataSource
         .getRepository(Wilder)
-        .findOneBy({ id: req.body.wilderId });
+        .findOneBy({ id: req.params.wilderId });
       console.log(wilderToUpdate);
       const skillToAdd = await dataSource
         .getRepository(Skills)
-        .findOneBy({ id: req.body.skillId });
+        .findOneBy({ id: req.params.skillId });
       wilderToUpdate.skills = [...wilderToUpdate.skills, skillToAdd];
       await dataSource.getRepository(Wilder).save(wilderToUpdate);
       res.send("Skill added to wilder");
