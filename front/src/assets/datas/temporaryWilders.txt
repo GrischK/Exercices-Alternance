@@ -1,0 +1,72 @@
+  // const wildersData = [
+  //   {
+  //     name: "Junior",
+  //     city: "Tadoussac",
+  //     id: 1,
+  //     img: Junior,
+  //     skills: [
+  //       { title: "JS", votes: 10 },
+  //       { title: "React", votes: 8 },
+  //     ],
+  //   },
+  //   {
+  //     name: "Chacha",
+  //     city: "Saguenay",
+  //     id: 2,
+  //     img: Chacha,
+  //     skills: [
+  //       { title: "PHP", votes: 9 },
+  //       { title: "Symfony", votes: 9 },
+  //     ],
+  //   },
+  //   {
+  //     name: "Chicoutimi",
+  //     city: "Shawinigan",
+  //     id: 3,
+  //     img: Galipette,
+  //     skills: [
+  //       { title: "Ruby", votes: 10 },
+  //       { title: "JS", votes: 8 },
+  //     ],
+  //   },
+  //   {
+  //     name: "Galipette",
+  //     city: "Trois Rivières",
+  //     id: 4,
+  //     img: Gabelou,
+  //     skills: [
+  //       { title: "C++", votes: 10 },
+  //       { title: "Rust", votes: 8 },
+  //     ],
+  //   },
+  //   {
+  //     name: "Mylo",
+  //     city: "Plessisville",
+  //     id: 5,
+  //     img: Mylo,
+  //     skills: [
+  //       { title: "JAVA", votes: 10 },
+  //       { title: "NextJS", votes: 8 },
+  //     ],
+  //   },
+  //   {
+  //     name: "Wesley",
+  //     city: "Montreal",
+  //     id: 6,
+  //     img: Wesley,
+  //     skills: [
+  //       { title: "JAVA", votes: 10 },
+  //       { title: "NextJS", votes: 8 },
+  //     ],
+  //   },
+  //   {
+  //     name: "Bossa",
+  //     city: "Quebec",
+  //     id: 7,
+  //     img: Bossa,
+  //     skills: [
+  //       { title: "JAVA", votes: 10 },
+  //       { title: "NextJS", votes: 8 },
+  //     ],
+  //   },
+  // ];

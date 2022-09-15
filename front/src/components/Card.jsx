@@ -12,7 +12,7 @@ export default function Card({ name, skills, city, avatar, fetchWilders, wilderI
 
   return (
     <article className="card">
-      <img src={avatar} alt="Jane Doe Profile" />
+      <img src={avatar} alt={name} />
       <h3>{name}</h3>
       <h4>{city}</h4>
       <p>

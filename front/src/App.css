@@ -172,3 +172,43 @@ footer {
   height: 20px;
   width: 20px;
 }
+
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+form h1{
+  font-size: 20px;
+  margin: 0 0 0.35em;
+  color: #f76c6c;
+}
+
+button{
+  margin-top: 20px;
+  background-color: #f76c6c;
+  padding: 5px;
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  color: white;
+  font-weight: 500;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form input {
+  margin: 10px auto;
+}
+
+form button {
+  background-color: #02182B;
+}

@@ -30,12 +30,12 @@ module.exports = {
   },
 
   update: async (req, res) => {
-    const { name } = req.body;
-    if (name.length > 100 || name.length === 0) {
-      return res
-        .status(200)
-        .send("the name should have a length between 1 and 100 characters");
-    }
+    const { data } = req.body;
+    // if (name.length > 100 || name.length === 0) {
+    //   return res
+    //     .status(200)
+    //     .send("the name should have a length between 1 and 100 characters");
+    // }
     try {
       const { affected } = await dataSource
         .getRepository(Wilder)
