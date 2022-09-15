@@ -27,7 +27,7 @@ export default function Card({ name, skills, city, avatar, fetchWilders, wilderI
           <SkillCard key={index} title={skill.name} votes={skill.votes} />
         ))}
       </ul>
-      <button type="button" onClick={()=>handleDelete(wilderID)}>Effacer ce wilder</button>
+      <button className="customedButton" type="button" onClick={()=>handleDelete(wilderID)}>Effacer ce wilder</button>
     </article>
   );
 }

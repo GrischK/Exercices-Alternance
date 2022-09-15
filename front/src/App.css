@@ -1,3 +1,17 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .App {
   text-align: center;
 }
@@ -177,20 +191,20 @@ form {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 33%;
   padding: 20px;
   border: 1px solid #c9c9c9;
   border-radius: 7px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-form h1{
+form h1 {
   font-size: 20px;
   margin: 0 0 0.35em;
   color: #f76c6c;
 }
 
-button{
+.customedButton {
   margin-top: 20px;
   background-color: #f76c6c;
   padding: 5px;
@@ -205,10 +219,13 @@ button:hover {
   cursor: pointer;
 }
 
-form input {
+.customedInput {
   margin: 10px auto;
+  border:solid 1px #757575;
+  border-radius: 7px;
+padding: 5px;
 }
 
 form button {
-  background-color: #02182B;
+  background-color: #02182b;
 }
