@@ -1,20 +1,23 @@
 import "./App.css";
 import { motion } from "framer-motion";
-import { useEffect,useState } from "react";
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import Card from "./components/Card";
 import WilderForm from "./components/WilderForm";
+import SkillForm from "./components/SkillForm";
 
 function App() {
   const [wilders, setWilders] = useState([]);
 
   const fetchWilders = async () => {
-    const {data:wildersList} = await axios.get("http://localhost:5000/wilders");
+    const { data: wildersList } = await axios.get(
+      "http://localhost:5000/wilders"
+    );
     console.log(wilders);
-    setWilders(wildersList)
+    setWilders(wildersList);
   };
-  
+
   useEffect(() => {
     fetchWilders();
   }, []);
@@ -38,12 +41,15 @@ function App() {
               skills={wilder.skills}
               city={wilder.city}
               avatar={wilder.img}
-              fetchWilders = {fetchWilders}
+              fetchWilders={fetchWilders}
               wilderID={wilder.id}
             />
           ))}
         </section>
-        <WilderForm fetchWilders={fetchWilders}/>
+        <div className="flex justify-around adding mt-6 p-6">
+          <WilderForm fetchWilders={fetchWilders} />
+          <SkillForm />
+        </div>
       </main>
       <footer>
         <div className="container">

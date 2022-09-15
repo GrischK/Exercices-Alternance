@@ -2,11 +2,9 @@ import axios from "axios";
 import SkillCard from "./Skills";
 
 export default function Card({ name, skills, city, avatar, fetchWilders, wilderID }) {
-  console.log(skills)
 
   const handleDelete = async (wilderID) => {
     const newWilder = await axios.delete(`http://localhost:5000/wilders/${wilderID}`);
-    console.log(newWilder);
     fetchWilders();
   };
 

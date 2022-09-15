@@ -8,8 +8,6 @@ export default function WilderForm({ fetchWilders }) {
   const [img, setImg] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(name);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -22,14 +20,13 @@ export default function WilderForm({ fetchWilders }) {
     setIsLoading(false);
 
     fetchWilders();
-    setName("")
-    setCity("")
-    setImg("")
-
+    setName("");
+    setCity("");
+    setImg("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="flex flex-column justify-between" onSubmit={handleSubmit}>
       <h1>Nouveau Wilder</h1>
       <label htmlFor="name">Nom : </label>
       <input
