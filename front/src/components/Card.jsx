@@ -1,7 +1,15 @@
+import axios from "axios";
 import SkillCard from "./Skills";
 
-export default function Card({ name, skills, city, avatar }) {
-  console.log(skills);
+export default function Card({ name, skills, city, avatar, fetchWilders, wilderID }) {
+  console.log(skills)
+
+  const handleDelete = async (wilderID) => {
+    const newWilder = await axios.delete(`http://localhost:5000/wilders/${wilderID}`);
+    console.log(newWilder);
+    fetchWilders();
+  };
+
   return (
     <article className="card">
       <img src={avatar} alt="Jane Doe Profile" />
@@ -16,9 +24,10 @@ export default function Card({ name, skills, city, avatar }) {
       <h4>Wild Skills</h4>
       <ul className="skills">
         {skills.map((skill, index) => (
-          <SkillCard key={index} title={skill.title} votes={skill.votes} />
+          <SkillCard key={index} title={skill.name} votes={skill.votes} />
         ))}
       </ul>
+      <button type="button" onClick={()=>handleDelete(wilderID)}>Effacer ce wilder</button>
     </article>
   );
 }

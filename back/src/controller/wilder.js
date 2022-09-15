@@ -11,7 +11,7 @@ module.exports = {
         .send("the name should have a length between 1 and 100 characters");
     }
     try {
-      const created = await dataSource.getRepository(Wilder).save({ name });
+      const created = await dataSource.getRepository(Wilder).save( req.body);
       res.status(201).send(created);
     } catch (err) {
       console.error(err);

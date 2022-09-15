@@ -1,5 +1,7 @@
 import "./App.css";
 import { motion } from "framer-motion";
+import { useEffect,useState } from "react";
+import axios from 'axios';
 
 import Card from "./components/Card";
 import Junior from "./assets/images/dog1.webp";
@@ -9,8 +11,11 @@ import Gabelou from "./assets/images/dog4.jpg";
 import Mylo from "./assets/images/dog5.jpg";
 import Wesley from "./assets/images/dog6.jpg";
 import Bossa from "./assets/images/dog7.jpg";
+import WilderForm from "./components/WilderForm";
 
 function App() {
+  const [wilders, setWilders] = useState([]);
+
   const wildersData = [
     {
       name: "Junior",
@@ -83,28 +88,42 @@ function App() {
       ],
     },
   ];
+
+  const fetchWilders = async () => {
+    const {data:wildersList} = await axios.get("http://localhost:5000/wilders");
+    console.log(wilders);
+    setWilders(wildersList)
+  };
+  
+  useEffect(() => {
+    fetchWilders();
+  }, []);
+
   return (
     <div className="App">
       <header>
         <div className="container">
-          <h1>Wilders Book</h1>
+          <h1>Wilders Golden Book</h1>
         </div>
       </header>
       <main className="container">
-        <motion.div animate={{ x: [0, 100, -100, 0]}}>
-          <h2>Wilders</h2>
+        <motion.div animate={{ x: [0, 100, -100, 0] }}>
+          <h2>Wild dogs</h2>
         </motion.div>
         <section className="card-row">
-          {wildersData.map((wilder) => (
+          {wilders.map((wilder) => (
             <Card
               key={wilder.id}
               name={wilder.name}
               skills={wilder.skills}
               city={wilder.city}
               avatar={wilder.img}
+              fetchWilders = {fetchWilders}
+              wilderID={wilder.id}
             />
           ))}
         </section>
+        <WilderForm fetchWilders={fetchWilders}/>
       </main>
       <footer>
         <div className="container">
