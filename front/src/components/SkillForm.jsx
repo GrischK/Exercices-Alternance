@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import SkillCard from "./Skills";
 
@@ -27,7 +26,6 @@ export default function SkillForm({ fetchWilders }) {
 
   useEffect(() => {
     fetchSkills();
-    console.log(skillsList);
   }, []);
 
   return (
