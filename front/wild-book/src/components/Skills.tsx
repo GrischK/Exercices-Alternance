@@ -1,7 +1,6 @@
 export interface ISkillCardProps {
   title: string;
-  votes: string;
-  name: string;
+  votes: string | number;
 }
 
 export default function SkillCard({ title, votes }: ISkillCardProps) {

@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
-export default function UpdateWilderForm({ fetchWilders }) {
-  const [newName, setNewName] = useState();
-  const [newCity, setNewCity] = useState();
-  const [newImg, setNewImg] = useState();
+export interface IWilderFormProps {
+  fetchWilders: () => Promise<void>;
+}
+export default function UpdateWilderForm({ fetchWilders }: IWilderFormProps) {
+  const [newName, setNewName] = useState("");
+  const [newCity, setNewCity] = useState("");
+  const [newImg, setNewImg] = useState("");
 
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const newWilder = await axios.put("http://localhost:5000/wilders", {
       name: newName,

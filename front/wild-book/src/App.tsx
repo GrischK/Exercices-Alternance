@@ -3,18 +3,27 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import Card, { ICardProps } from "./components/Card";
+import Card, { ICardProps, IGrade } from "./components/Card";
 import WilderForm from "./components/WilderForm";
 import SkillForm from "./components/SkillForm";
 
+interface IWilder {
+  id: number;
+  name: string;
+  city: string;
+  img: string;
+  bio: string;
+  grades: [];
+  skills: IGrade[];
+}
+
 function App() {
-  const [wilders, setWilders] = useState<ICardProps[]>([]);
+  const [wilders, setWilders] = useState<IWilder[]>([]);
 
   const fetchWilders = async () => {
     const { data: wildersList } = await axios.get(
       "http://localhost:5000/wilders"
     );
-    console.log(wildersList);
     setWilders(wildersList);
   };
 

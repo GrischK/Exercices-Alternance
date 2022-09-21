@@ -24,7 +24,7 @@ const wilderController: IController = {
   get: async (req, res) => {
     try {
       const wilders = await dataSource.getRepository(Wilder).find({ relations: { grades: { skill: true } } });
-      res.send(wilders.map(w => ({ ...w, skills: w.grades.map(g => (g.skillId)) })));
+      res.send(wilders.map(w => ({ ...w, skills: w.grades.map(g => ({ id: g.skillId, name: g.skill.name })) })));
     } catch (err) {
       console.error(err);
       res.send("error while getting wilders");

@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
 
+export interface IUpWilderFormProps {
+  fetchWilders: () => Promise<void>;
+}
+
 export default function UpdateWilderForm({ fetchWilders }) {
   const [newName, setNewName] = useState();
   const [newCity, setNewCity] = useState();
   const [newImg, setNewImg] = useState();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();

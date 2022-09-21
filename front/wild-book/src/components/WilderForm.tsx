@@ -1,15 +1,19 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import Loader from "./Loader";
 import { ICardProps } from "./Card";
 
-export default function WilderForm({ fetchWilders }) {
+export interface IWilderFormProps {
+  fetchWilders: () => Promise<void>;
+}
+
+export default function WilderForm({ fetchWilders }: IWilderFormProps) {
   const [name, setName] = useState<ICardProps["name"]>();
   const [city, setCity] = useState<ICardProps["city"]>();
   const [img, setImg] = useState<ICardProps["img"]>();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     const newWilder = await axios.post("http://localhost:5000/wilders", {

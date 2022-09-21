@@ -1,16 +1,25 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import SkillCard, { ISkillCardProps } from "./Skills";
 
 export interface ICardProps {
-  id: number;
+  id?: number;
   name: string;
-  skills: ISkillCardProps[];
+  skills: IGrade[];
   city: string;
-  img: string;
+  img?: string;
   avatar: string;
-  fetchWilders: () => [];
+  fetchWilders: () => Promise<void>;
   wilderID: number;
+}
+
+export interface ISkill {
+  name: string;
+  id: number;
+}
+
+export interface IGrade extends ISkill {
+  votes: number;
 }
 
 export default function Card({
@@ -21,19 +30,17 @@ export default function Card({
   fetchWilders,
   wilderID,
 }: ICardProps) {
-  const [skillsList, setSkillsList] = useState([]);
-  const [skillId, setSkillId] = useState([]);
+  const [skillsList, setSkillsList] = useState<ISkill[]>([]);
+  const [skillId, setSkillId] = useState<string>("");
 
-  console.log(avatar);
-
-  const handleDelete = async (wilderID) => {
+  const handleDelete = async (wilderID: number) => {
     const newWilder = await axios.delete(
       `http://localhost:5000/wilders/${wilderID}`
     );
     fetchWilders();
   };
 
-  const handleAddSkill = async (wilderID, skillId) => {
+  const handleAddSkill = async (wilderID: number, skillId: number) => {
     const newSkillToAdd = await axios.post(
       `http://localhost:5000/wilders/${wilderID}/skills/${skillId}`
     );
@@ -80,7 +87,7 @@ export default function Card({
             id="skills"
             className="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option defaultValue>Choisir une compétence</option>
+            <option value="">Choisir une compétence</option>
             {skillsList.map((skill, index) => (
               <option key={index} value={skill.id}>
                 {skill.name}
@@ -90,7 +97,7 @@ export default function Card({
           <button
             className="customedButton mt-0 addSkillBtn"
             type="button"
-            onClick={() => handleAddSkill(wilderID, skillId)}
+            onClick={() => handleAddSkill(wilderID, parseInt(skillId))}
           >
             OK
           </button>
