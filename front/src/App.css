@@ -252,3 +252,23 @@ form .skills .votes {
 .adding {
   border-top: 2px solid #f76c6c;
 }
+
+.addSkillBtn {
+  margin-top:0px;
+}
+
+.skillToAddBlock{
+  gap:5px;
+}
+
+.skillBorder{
+  border: 1px solid #c9c9c9;
+  border-radius: 7px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.skillBorder label{
+  color: #f76c6c;
+}

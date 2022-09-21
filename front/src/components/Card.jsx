@@ -12,7 +12,8 @@ export default function Card({
 }) {
   const [skillsList, setSkillsList] = useState([]);
   const [skillId, setSkillId] = useState([]);
-  console.log(skillId);
+
+  console.log(avatar);
 
   const handleDelete = async (wilderID) => {
     const newWilder = await axios.delete(
@@ -26,6 +27,7 @@ export default function Card({
       `http://localhost:5000/wilders/${wilderID}/skills/${skillId}`
     );
     fetchWilders();
+    fetchSkills();
   };
 
   const fetchSkills = async () => {
@@ -54,32 +56,34 @@ export default function Card({
           <SkillCard key={index} title={skill.name} votes={skill.votes} />
         ))}
       </ul>
-      <label
-        for="skills"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-      >
-        Select a skill to add
-      </label>
-      <div className="flex justify-center">
-        <select
-          onChange={(e) => setSkillId(e.target.value)}
-          id="skills"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      <div className="skillBorder">
+        <label
+          htmlFor="skills"
+          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
         >
-          <option selected>Choose a skill</option>
-          {skillsList.map((skill, index) => (
-            <option key={index} value={skill.id}>
-              {skill.name}
-            </option>
-          ))}
-        </select>
-        <button
-          className="customedButton mt-0"
-          type="button"
-          onClick={() => handleAddSkill(wilderID, skillId)}
-        >
-          OK
-        </button>
+          Ajouter une compétence
+        </label>
+        <div className="flex justify-center skillToAddBlock">
+          <select
+            onChange={(e) => setSkillId(e.target.value)}
+            id="skills"
+            className="text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option defaultValue>Choisir une compétence</option>
+            {skillsList.map((skill, index) => (
+              <option key={index} value={skill.id}>
+                {skill.name}
+              </option>
+            ))}
+          </select>
+          <button
+            className="customedButton mt-0 addSkillBtn"
+            type="button"
+            onClick={() => handleAddSkill(wilderID, skillId)}
+          >
+            OK
+          </button>
+        </div>
       </div>
       <button
         className="customedButton"

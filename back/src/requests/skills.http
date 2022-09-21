@@ -7,23 +7,23 @@ POST http://localhost:5000/skills
 Content-Type: application/json
 
 {
-    "name": "React"
+    "name": "TEST"
 }   
 
 
 ###
 
-PUT http://localhost:5000/skills/1
+PUT http://localhost:5000/skills/10
 Content-Type: application/json
 
 {
-    "name":"Node"
+    "name":"ModifTEST"
 }
 
 
 ###
 
-DELETE  http://localhost:5000/skills/1
+DELETE  http://localhost:5000/skills/10
 
 
 ###

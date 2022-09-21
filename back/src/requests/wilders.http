@@ -7,30 +7,32 @@ POST http://localhost:5000/wilders
 Content-Type: application/json
 
 {
-    "name": "Loulou"
+    "name": "TEST2",
+    "city":"No man's land",
+    "bio":"Unknown",
 }   
 
 
 ###
 
-PUT http://localhost:5000/wilders/20
+PUT http://localhost:5000/wilders/67
 Content-Type: application/json
 
 {   
-    "city":"Bègles"
+    "img":"https://i.imgur.com/UkHqP00.jpg"
 }
 
 
 ###
 
-DELETE  http://localhost:5000/wilders/37
+DELETE  http://localhost:5000/wilders/69
 
 
 ###
 
-POST http://localhost:5000/wilders/34/skills/2
+POST http://localhost:5000/wilders/68/skills/2
 
 
 ###
 
-DELETE http://localhost:5000/wilders/34/skills/2
+DELETE http://localhost:5000/wilders/68/skills/2

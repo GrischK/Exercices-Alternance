@@ -14,7 +14,7 @@ function App() {
     const { data: wildersList } = await axios.get(
       "http://localhost:5000/wilders"
     );
-    console.log(wilders);
+    console.log(wildersList);
     setWilders(wildersList);
   };
 
@@ -53,7 +53,7 @@ function App() {
       </main>
       <footer>
         <div className="container">
-          <p>&copy; 2022 Wild Code School</p>
+          <p>&copy; 2022 GrischK</p>
         </div>
       </footer>
     </div>
