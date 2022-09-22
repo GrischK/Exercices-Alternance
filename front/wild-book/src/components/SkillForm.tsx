@@ -35,16 +35,16 @@ export default function SkillForm() {
     <div className="App">
       <header>
         <div className="container">
-          <h1>Wilders Golden Book</h1>
+          <h1 className="coloredTitle">Wilders Golden Book</h1>
         </div>
         <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -54,9 +54,9 @@ export default function SkillForm() {
           <NavLink
             to="/wilder-form"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -66,9 +66,9 @@ export default function SkillForm() {
           <NavLink
             to="/skill-form"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -82,7 +82,7 @@ export default function SkillForm() {
           className="flex flex-column justify-between mx-auto"
           onSubmit={handleSubmit}
         >
-          <h1>Nouvelle compétence</h1>
+          <h1 className="coloredTitle">Nouvelle compétence</h1>
           <input
             className="customedInput"
             type="text"

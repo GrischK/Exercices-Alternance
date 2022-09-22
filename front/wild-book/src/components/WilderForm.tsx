@@ -39,16 +39,16 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
     <div className="App">
       <header>
         <div className="container">
-          <h1>Wilders Golden Book</h1>
+          <h1 className="coloredTitle">Wilders Golden Book</h1>
         </div>
         <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -58,9 +58,9 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
           <NavLink
             to="/wilder-form"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -70,9 +70,9 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
           <NavLink
             to="/skill-form"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -86,7 +86,7 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
           className="flex flex-column justify-between mx-auto"
           onSubmit={handleSubmit}
         >
-          <h1>Nouveau Wilder</h1>
+          <h1 className="coloredTitle">Nouveau Wilder</h1>
           <label htmlFor="name">Nom : </label>
           <input
             className="customedInput"
@@ -103,12 +103,12 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
             onChange={(e) => setCity(e.target.value)}
             value={city}
           ></input>
-          <label htmlFor="image">Biographie : </label>
+          <label htmlFor="bio">Biographie : </label>
           <input
             className="customedInput"
             type="text"
             id="bio"
-            onChange={(e) => setImg(e.target.value)}
+            onChange={(e) => setBio(e.target.value)}
             value={bio}
           ></input>
           <label htmlFor="image">Avatar : </label>

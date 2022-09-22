@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(23, 70, 138);
+  background: linear-gradient(
+    0deg,
+    rgba(23, 70, 138, 1) 0%,
+    rgba(4, 36, 80, 1) 100%
+  );
 }
 
 code {
@@ -91,12 +97,13 @@ p {
 }
 
 header {
-  background-color: #f76c6c;
+  background-color: transparent;
   color: #fff;
+  border-bottom: 2px solid #eeb902;
 }
 
 footer {
-  border-top: 2px solid #f76c6c;
+  border-top: 2px solid #eeb902;
 }
 
 /* 
@@ -106,9 +113,11 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 32%);
   justify-content: space-between;
+  gap: 10px;
 }
 
 .card {
+  background-color: rgba(4, 36, 80, 1);
   padding: 20px;
   border: 1px solid #c9c9c9;
   border-radius: 7px;
@@ -124,10 +133,14 @@ footer {
 
 .card h3,
 .card h4 {
-  color: #f76c6c;
+  color: #eeb902;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: start;
+}
+
+.card h3 {
+  font-weight: bold;
 }
 
 .card h3 em {
@@ -138,7 +151,7 @@ footer {
 
 .card p,
 .card ul {
-  color: #757575;
+  color: white;
   line-height: 1.5;
 }
 
@@ -146,7 +159,7 @@ footer {
   /* Reset text link default */
   text-decoration: none;
 
-  background-color: #f76c6c;
+  background-color: #021027;
   color: #fff;
   padding: 0.5em 1em;
   border-radius: 4px;
@@ -166,7 +179,7 @@ footer {
   margin: 4px 0;
   display: flex;
   justify-content: space-around;
-  border: #f76c6c 1px solid;
+  border: #eeb902 1px solid;
   border-radius: 4px;
   padding: 2px;
 }
@@ -200,14 +213,14 @@ form {
 form h1 {
   font-size: 20px;
   margin: 0 0 0.35em;
-  color: #f76c6c;
+  color: #eeb902;
 }
 
 .customedButton {
   margin-top: 20px;
-  background-color: #f76c6c;
+  background-color: #0e213e;
   padding: 5px;
-  border: 1px solid #c9c9c9;
+  border: 1px solid #eeb902;
   border-radius: 7px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   color: white;
@@ -218,9 +231,9 @@ form h1 {
   width: 20px;
   height: 20px;
   display: flex;
-  background-color: #f76c6c;
+  background-color: #0e213e;
   padding: 5px;
-  border: 1px solid #c9c9c9;
+  border: 1px solid #eeb902;
   border-radius: 50%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   color: white;
@@ -236,6 +249,8 @@ button:hover {
   border: solid 1px #757575;
   border-radius: 7px;
   padding: 5px;
+  background-color: rgb(55 65 81);
+  color: white;
 }
 
 form button {
@@ -246,7 +261,7 @@ form .skills li {
   margin: 4px 0;
   display: flex;
   justify-content: space-around;
-  border: #f76c6c 1px solid;
+  border: #eeb902 1px solid;
   border-radius: 4px;
   padding: 2px;
 }
@@ -263,7 +278,7 @@ form .skills .votes {
 }
 
 .adding {
-  border-top: 2px solid #f76c6c;
+  border-top: 2px solid #eeb902;
 }
 
 .addSkillBtn {
@@ -283,8 +298,20 @@ form .skills .votes {
 }
 
 .skillBorder label {
-  color: #f76c6c;
+  color: #eeb902;
 }
 .edit-btn {
   margin: 0 0 0.35em;
+}
+
+.coloredTitle {
+  color: #eeb902;
+}
+
+label {
+  color: white;
+}
+
+form .skills li {
+  color: white;
 }

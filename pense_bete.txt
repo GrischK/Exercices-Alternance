@@ -1,0 +1,1 @@
+outlet pour header et footer

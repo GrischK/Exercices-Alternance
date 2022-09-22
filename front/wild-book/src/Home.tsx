@@ -21,7 +21,7 @@ export interface IWilder {
 
 function Home() {
   const [wilders, setWilders] = useState<IWilder[]>([]);
-
+  console.log(wilders);
   const fetchWilders = async () => {
     const { data: wildersList } = await axios.get(
       "http://localhost:5000/wilders"
@@ -37,16 +37,16 @@ function Home() {
     <div className="App">
       <header>
         <div className="container">
-          <h1>Wilders Golden Book</h1>
+          <h1 className="coloredTitle">Wilders Golden Book</h1>
         </div>
         <ul className="flex gap-4 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -56,9 +56,9 @@ function Home() {
           <NavLink
             to="/wilder-form"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -68,9 +68,9 @@ function Home() {
           <NavLink
             to="/skill-form"
             style={({ isActive }) => ({
-              color: isActive ? "#545e6f" : "#fff",
+              color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
-              border: isActive ? "1px solid #545e6f" : "",
+              border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
             })}
@@ -81,7 +81,7 @@ function Home() {
       </header>
       <main className="container">
         <motion.div animate={{ x: [0, 100, -100, 0] }}>
-          <h2>Wild potes</h2>
+          <h2 className="coloredTitle">Wild potes</h2>
         </motion.div>
         <section className="card-row">
           {wilders.map((wilder) => (

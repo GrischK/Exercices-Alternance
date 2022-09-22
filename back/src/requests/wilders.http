@@ -24,7 +24,7 @@ PUT http://localhost:5000/wilders/68
 Content-Type: application/json
 
 {   
-    "img":"https://i.imgur.com/LsW6TOb.jpg"
+    "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis tellus pulvinar, imperdiet libero et, consequat orci. Fusce sit amet sapien turpis. Nullam pharetra, ligula non lobortis viverra, massa massa pulvinar purus, a hendrerit tortor nunc vel dui. Donec et gravida nulla. Sed vel erat faucibus, tincidunt nulla quis, pellentesque mauris."
 }
 
 
