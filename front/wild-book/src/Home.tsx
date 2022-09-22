@@ -39,7 +39,7 @@ function Home() {
         <div className="container">
           <h1>Wilders Golden Book</h1>
         </div>
-        <ul className="flex gap-2 justify-center pb-2 items-center">
+        <ul className="flex gap-4 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"

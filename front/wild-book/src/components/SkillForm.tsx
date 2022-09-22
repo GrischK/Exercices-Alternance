@@ -83,6 +83,14 @@ export default function SkillForm() {
           onSubmit={handleSubmit}
         >
           <h1>Nouvelle compétence</h1>
+          <input
+            className="customedInput"
+            type="text"
+            id="skillName"
+            onChange={(e) => setSkill(e.target.value)}
+            value={skill}
+          ></input>
+
           <ul className="skills flex justify-around flex-wrap">
             {skillsList.map((skill, index) => (
               <SkillCard
@@ -94,14 +102,6 @@ export default function SkillForm() {
               />
             ))}
           </ul>
-          <label htmlFor="skillName">Compétence : </label>
-          <input
-            className="customedInput"
-            type="text"
-            id="skillName"
-            onChange={(e) => setSkill(e.target.value)}
-            value={skill}
-          ></input>
           {isLoading && <Loader />}
           <button className="customedButton" disabled={isLoading} type="submit">
             Ajouter un nouvelle compétence
