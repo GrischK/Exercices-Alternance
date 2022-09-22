@@ -31,6 +31,16 @@ const wilderController: IController = {
     }
   },
 
+  getOne: async (req, res) => {
+    try {
+      const wilder = await dataSource.getRepository(Wilder).findOneBy({ id: parseInt(req.params.wilderId) });
+      res.status(201).send(wilder);
+    } catch (err) {
+      console.error(err);
+      res.send("error while getting wilder");
+    }
+  },
+
   update: async (req, res) => {
     // const { data } = req.body;
 

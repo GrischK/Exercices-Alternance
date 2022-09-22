@@ -15,6 +15,7 @@ app.use(express.json());
 // });
 
 app.get("/wilders", wilderController.get);
+app.get("/wilder/:id", wilderController.getOne);
 app.post("/wilders", wilderController.create);
 app.put("/wilders/:id", wilderController.update);
 app.delete("/wilders/:id", wilderController.delete);

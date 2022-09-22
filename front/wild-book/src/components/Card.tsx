@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState, ChangeEvent } from "react";
+import { NavLink, useParams } from "react-router-dom";
 
 import Skill from "./Skill";
 import SkillCard, { ISkillCardProps } from "./SkillCard";
+import edit from "../assets/edit.png";
 
 export interface ICardProps {
   id?: number;
@@ -13,6 +15,7 @@ export interface ICardProps {
   avatar: string;
   fetchWilders: () => Promise<void>;
   wilderId: number;
+  bio: string;
 }
 
 export interface ISkill {
@@ -28,12 +31,15 @@ export default function Card({
   name,
   skills,
   city,
+  id,
   avatar,
   fetchWilders,
   wilderId,
+  bio,
 }: ICardProps) {
   const [skillsList, setSkillsList] = useState<ISkill[]>([]);
   const [skillId, setSkillId] = useState<string>("");
+  const userId = useParams();
 
   const handleDelete = async (wilderId: number) => {
     await axios.delete(`http://localhost:5000/wilders/${wilderId}`);
@@ -60,14 +66,16 @@ export default function Card({
   return (
     <article className="card">
       <img src={avatar} alt={name} />
-      <h3>{name}</h3>
+      <div className="flex justify-center items-center gap-2">
+        <h3>{name}</h3>{" "}
+        <NavLink to={`/wilder-update/${id}`}>
+          <button className="customedButton2 edit-btn" type="button">
+            <img src={edit} />
+          </button>
+        </NavLink>
+      </div>
       <h4>{city}</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
+      <p>{bio}</p>
       <h4>Wild Skills</h4>
       <ul className="skills">
         {skills.map((skill, index) => (

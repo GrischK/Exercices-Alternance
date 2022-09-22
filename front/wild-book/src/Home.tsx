@@ -87,12 +87,14 @@ function Home() {
           {wilders.map((wilder) => (
             <Card
               key={wilder.id}
+              id={wilder.id}
               name={wilder.name}
               skills={wilder.skills}
               city={wilder.city}
               avatar={wilder.img}
               fetchWilders={fetchWilders}
               wilderId={wilder.id}
+              bio={wilder.bio}
             />
           ))}
         </section>

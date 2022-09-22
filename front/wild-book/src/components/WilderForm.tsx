@@ -12,6 +12,7 @@ export interface IWilderFormProps {
 export default function WilderForm({ fetchWilders }: IWilderFormProps) {
   const [name, setName] = useState<ICardProps["name"]>();
   const [city, setCity] = useState<ICardProps["city"]>();
+  const [bio, setBio] = useState<ICardProps["bio"]>();
   const [img, setImg] = useState<ICardProps["img"]>();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,6 +23,7 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
       name: name,
       city: city,
       img: img,
+      bio: bio,
     });
     console.log(newWilder);
     setIsLoading(false);
@@ -30,6 +32,7 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
     setName("");
     setCity("");
     setImg("");
+    setBio("");
   };
 
   return (
@@ -99,6 +102,14 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
             id="city"
             onChange={(e) => setCity(e.target.value)}
             value={city}
+          ></input>
+          <label htmlFor="image">Biographie : </label>
+          <input
+            className="customedInput"
+            type="text"
+            id="bio"
+            onChange={(e) => setImg(e.target.value)}
+            value={bio}
           ></input>
           <label htmlFor="image">Avatar : </label>
           <input

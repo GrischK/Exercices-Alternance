@@ -1,11 +1,12 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { IGrade } from "./components/Card";
 import WilderForm from "./components/WilderForm";
 import SkillForm from "./components/SkillForm";
+import UpdateWilderForm from "./components/UpdateWilderForm";
 import Home from "./Home";
 
 export interface IWilder {
@@ -33,7 +34,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/skill-form" element={<SkillForm />} />
@@ -41,8 +42,12 @@ function App() {
           path="/wilder-form"
           element={<WilderForm fetchWilders={fetchWilders} />}
         />
+        <Route
+          path={`/wilder-update/:userId`}
+          element={<UpdateWilderForm fetchWilders={fetchWilders} />}
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
