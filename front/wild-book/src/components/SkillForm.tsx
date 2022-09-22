@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState, FormEvent } from "react";
+import { NavLink } from "react-router-dom";
+
 import { IGrade } from "./Card";
 import Loader from "./Loader";
 import SkillCard from "./Skills";
@@ -30,25 +32,72 @@ export default function SkillForm() {
   }, []);
 
   return (
-    <form className="flex flex-column justify-between" onSubmit={handleSubmit}>
-      <h1>Nouvelle compétence</h1>
-      <ul className="skills flex justify-around flex-wrap">
-        {skillsList.map((skill, index) => (
-          <SkillCard key={index} title={skill.name} votes={skill.votes} />
-        ))}
-      </ul>
-      <label htmlFor="skillName">Compétence : </label>
-      <input
-        className="customedInput"
-        type="text"
-        id="skillName"
-        onChange={(e) => setSkill(e.target.value)}
-        value={skill}
-      ></input>
-      {isLoading && <Loader />}
-      <button className="customedButton" disabled={isLoading} type="submit">
-        Ajouter un nouvelle compétence
-      </button>
-    </form>
+    <div className="App">
+      <header>
+        <div className="container">
+          <h1>Wilders Golden Book</h1>
+        </div>
+        <ul className="flex gap-2 justify-center">
+          <NavLink
+            end
+            to="/"
+            style={({ isActive }) => ({
+              color: isActive ? "#545e6f" : "#fff",
+              textDecoration: isActive ? "underline" : "",
+            })}
+          >
+            Accueil
+          </NavLink>
+          <NavLink
+            to="/wilder-form"
+            style={({ isActive }) => ({
+              color: isActive ? "#545e6f" : "#fff",
+              textDecoration: isActive ? "underline" : "",
+            })}
+          >
+            Ajouter un wilder
+          </NavLink>
+          <NavLink
+            to="/skill-form"
+            style={({ isActive }) => ({
+              color: isActive ? "#545e6f" : "#fff",
+              textDecoration: isActive ? "underline" : "",
+            })}
+          >
+            Gérer les compétences
+          </NavLink>
+        </ul>{" "}
+      </header>
+      <main className="container">
+        <form
+          className="flex flex-column justify-between mx-auto"
+          onSubmit={handleSubmit}
+        >
+          <h1>Nouvelle compétence</h1>
+          <ul className="skills flex justify-around flex-wrap">
+            {skillsList.map((skill, index) => (
+              <SkillCard key={index} title={skill.name} votes={skill.votes} />
+            ))}
+          </ul>
+          <label htmlFor="skillName">Compétence : </label>
+          <input
+            className="customedInput"
+            type="text"
+            id="skillName"
+            onChange={(e) => setSkill(e.target.value)}
+            value={skill}
+          ></input>
+          {isLoading && <Loader />}
+          <button className="customedButton" disabled={isLoading} type="submit">
+            Ajouter un nouvelle compétence
+          </button>
+        </form>
+      </main>
+      <footer>
+        <div className="container">
+          <p>&copy; 2022 GrischK</p>
+        </div>
+      </footer>
+    </div>
   );
 }
