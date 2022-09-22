@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import { IGrade } from "./Card";
 import Loader from "./Loader";
-import SkillCard from "./Skills";
+import SkillCard from "./SkillCard";
 
 export default function SkillForm() {
   const [skill, setSkill] = useState<string>();
@@ -19,7 +19,7 @@ export default function SkillForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    const newSkill = await axios.post("http://localhost:5000/skills", {
+    await axios.post("http://localhost:5000/skills", {
       name: skill,
     });
     setIsLoading(false);
@@ -37,13 +37,16 @@ export default function SkillForm() {
         <div className="container">
           <h1>Wilders Golden Book</h1>
         </div>
-        <ul className="flex gap-2 justify-center">
+        <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Accueil
@@ -53,6 +56,9 @@ export default function SkillForm() {
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Ajouter un wilder
@@ -62,6 +68,9 @@ export default function SkillForm() {
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Gérer les compétences
@@ -76,7 +85,13 @@ export default function SkillForm() {
           <h1>Nouvelle compétence</h1>
           <ul className="skills flex justify-around flex-wrap">
             {skillsList.map((skill, index) => (
-              <SkillCard key={index} title={skill.name} votes={skill.votes} />
+              <SkillCard
+                key={index}
+                title={skill.name}
+                votes={skill.votes}
+                skillId={skill.id}
+                fetchSkills={fetchSkills}
+              />
             ))}
           </ul>
           <label htmlFor="skillName">Compétence : </label>

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState, ChangeEvent } from "react";
-import SkillCard, { ISkillCardProps } from "./Skills";
+
+import Skill from "./Skill";
+import SkillCard, { ISkillCardProps } from "./SkillCard";
 
 export interface ICardProps {
   id?: number;
@@ -10,7 +12,7 @@ export interface ICardProps {
   img?: string;
   avatar: string;
   fetchWilders: () => Promise<void>;
-  wilderID: number;
+  wilderId: number;
 }
 
 export interface ISkill {
@@ -28,21 +30,19 @@ export default function Card({
   city,
   avatar,
   fetchWilders,
-  wilderID,
+  wilderId,
 }: ICardProps) {
   const [skillsList, setSkillsList] = useState<ISkill[]>([]);
   const [skillId, setSkillId] = useState<string>("");
 
-  const handleDelete = async (wilderID: number) => {
-    const newWilder = await axios.delete(
-      `http://localhost:5000/wilders/${wilderID}`
-    );
+  const handleDelete = async (wilderId: number) => {
+    await axios.delete(`http://localhost:5000/wilders/${wilderId}`);
     fetchWilders();
   };
 
-  const handleAddSkill = async (wilderID: number, skillId: number) => {
-    const newSkillToAdd = await axios.post(
-      `http://localhost:5000/wilders/${wilderID}/skills/${skillId}`
+  const handleAddSkill = async (wilderId: number, skillId: number) => {
+    await axios.post(
+      `http://localhost:5000/wilders/${wilderId}/skills/${skillId}`
     );
     fetchWilders();
     fetchSkills();
@@ -71,7 +71,15 @@ export default function Card({
       <h4>Wild Skills</h4>
       <ul className="skills">
         {skills.map((skill, index) => (
-          <SkillCard key={index} title={skill.name} votes={skill.votes} />
+          <Skill
+            key={index}
+            title={skill.name}
+            votes={skill.votes}
+            skillId={skill.id}
+            fetchSkills={fetchSkills}
+            wilderId={wilderId}
+            fetchWilders={fetchWilders}
+          />
         ))}
       </ul>
       <div className="skillBorder">
@@ -97,7 +105,7 @@ export default function Card({
           <button
             className="customedButton mt-0 addSkillBtn"
             type="button"
-            onClick={() => handleAddSkill(wilderID, parseInt(skillId))}
+            onClick={() => handleAddSkill(wilderId, parseInt(skillId))}
           >
             OK
           </button>
@@ -106,7 +114,7 @@ export default function Card({
       <button
         className="customedButton"
         type="button"
-        onClick={() => handleDelete(wilderID)}
+        onClick={() => handleDelete(wilderId)}
       >
         Effacer ce wilder
       </button>

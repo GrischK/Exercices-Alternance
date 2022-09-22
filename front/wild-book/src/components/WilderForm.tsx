@@ -38,13 +38,16 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
         <div className="container">
           <h1>Wilders Golden Book</h1>
         </div>
-        <ul className="flex gap-2 justify-center">
+        <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Accueil
@@ -54,6 +57,9 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Ajouter un wilder
@@ -63,6 +69,9 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Gérer les compétences

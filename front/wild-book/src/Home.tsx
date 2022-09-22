@@ -7,6 +7,7 @@ import axios from "axios";
 import Card, { ICardProps, IGrade } from "./components/Card";
 import WilderForm from "./components/WilderForm";
 import SkillForm from "./components/SkillForm";
+import { SymbolDisplayPartKind } from "typescript";
 
 export interface IWilder {
   id: number;
@@ -38,13 +39,16 @@ function Home() {
         <div className="container">
           <h1>Wilders Golden Book</h1>
         </div>
-        <ul className="flex gap-2 justify-center">
+        <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
             to="/"
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Accueil
@@ -54,6 +58,9 @@ function Home() {
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Ajouter un wilder
@@ -63,6 +70,9 @@ function Home() {
             style={({ isActive }) => ({
               color: isActive ? "#545e6f" : "#fff",
               textDecoration: isActive ? "underline" : "",
+              border: isActive ? "1px solid #545e6f" : "",
+              padding: isActive ? "5px" : "",
+              borderRadius: isActive ? "12px" : "",
             })}
           >
             Gérer les compétences
@@ -82,7 +92,7 @@ function Home() {
               city={wilder.city}
               avatar={wilder.img}
               fetchWilders={fetchWilders}
-              wilderID={wilder.id}
+              wilderId={wilder.id}
             />
           ))}
         </section>

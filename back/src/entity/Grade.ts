@@ -20,7 +20,7 @@ export class Grade {
     @ManyToOne(() => Wilder, (w) => w.grades)
     wilder: Wilder;
 
-    @ManyToOne(() => Skill, (s) => s.grades)
+    @ManyToOne(() => Skill, (s) => s.grades, { onDelete: 'CASCADE' })
     skill: Skill;
 }
 
