@@ -42,10 +42,9 @@ function Home() {
         <ul className="flex gap-4 justify-center pb-2 items-center">
           <NavLink
             end
-            to="/"
+            to="/home"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
-              textDecoration: isActive ? "underline" : "",
               border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
@@ -57,7 +56,6 @@ function Home() {
             to="/wilder-form"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
-              textDecoration: isActive ? "underline" : "",
               border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
@@ -69,7 +67,6 @@ function Home() {
             to="/skill-form"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
-              textDecoration: isActive ? "underline" : "",
               border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
@@ -101,7 +98,7 @@ function Home() {
       </main>
       <footer>
         <div className="container">
-          <p>&copy; 2022 GrischK</p>
+          <p className="copyright">&copy; 2022 GrischK</p>
         </div>
       </footer>
     </div>

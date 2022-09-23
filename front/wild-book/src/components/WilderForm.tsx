@@ -44,10 +44,9 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
         <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
-            to="/"
+            to="/home"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
-              textDecoration: isActive ? "underline" : "",
               border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
@@ -59,7 +58,6 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
             to="/wilder-form"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
-              textDecoration: isActive ? "underline" : "",
               border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
@@ -71,7 +69,6 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
             to="/skill-form"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
-              textDecoration: isActive ? "underline" : "",
               border: isActive ? "1px solid #EEB902" : "",
               padding: isActive ? "5px" : "",
               borderRadius: isActive ? "12px" : "",
@@ -127,7 +124,7 @@ export default function WilderForm({ fetchWilders }: IWilderFormProps) {
       </main>
       <footer>
         <div className="container">
-          <p>&copy; 2022 GrischK</p>
+          <p className="copyright">&copy; 2022 GrischK</p>
         </div>
       </footer>
     </div>

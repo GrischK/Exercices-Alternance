@@ -13,9 +13,7 @@ export default function UpdateWilderForm({ fetchWilders }: IWilderFormProps) {
   const userId = useParams();
 
   const updateWilder = async () => {
-    const { data: wilder } = await axios.put(
-      `http://localhost:5000/wilders/${userId},`
-    );
+    await axios.put(`http://localhost:5000/wilders/${userId}}`, {});
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -38,7 +36,7 @@ export default function UpdateWilderForm({ fetchWilders }: IWilderFormProps) {
         <ul className="flex gap-2 justify-center pb-2 items-center">
           <NavLink
             end
-            to="/"
+            to="/home"
             style={({ isActive }) => ({
               color: isActive ? "#EEB902" : "#fff",
               textDecoration: isActive ? "underline" : "",
@@ -112,7 +110,7 @@ export default function UpdateWilderForm({ fetchWilders }: IWilderFormProps) {
       </main>
       <footer>
         <div className="container">
-          <p>&copy; 2022 GrischK</p>
+          <p className="copyright">&copy; 2022 GrischK</p>
         </div>
       </footer>
     </div>

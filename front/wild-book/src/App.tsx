@@ -8,6 +8,7 @@ import WilderForm from "./components/WilderForm";
 import SkillForm from "./components/SkillForm";
 import UpdateWilderForm from "./components/UpdateWilderForm";
 import Home from "./Home";
+import Index from "./components/Index";
 
 export interface IWilder {
   id: number;
@@ -36,7 +37,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Index />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/skill-form" element={<SkillForm />} />
         <Route
           path="/wilder-form"

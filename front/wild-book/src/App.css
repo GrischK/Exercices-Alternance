@@ -5,12 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(23, 70, 138);
+  /* background: rgb(23, 70, 138);
   background: linear-gradient(
     0deg,
     rgba(23, 70, 138, 1) 0%,
-    rgba(4, 36, 80, 1) 100%
-  );
+    rgba(4, 36, 80, 1) 100% */
+  background: url(./assets/jungle.jpg) top center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
@@ -71,10 +74,12 @@ h3 {
 
 h1 {
   font-size: 40px;
+  color: #eeb902;
 }
 
 h2 {
   font-size: 28px;
+  color: #eeb902;
 }
 
 h3 {
@@ -89,6 +94,10 @@ p {
   margin: 0 0 1.15em;
 }
 
+header ul > * {
+  color: #eeb902;
+}
+
 .container {
   max-width: 800px;
   margin-left: auto;
@@ -97,7 +106,7 @@ p {
 }
 
 header {
-  background-color: transparent;
+  background-color: black;
   color: #fff;
   border-bottom: 2px solid #eeb902;
 }
@@ -117,7 +126,7 @@ footer {
 }
 
 .card {
-  background-color: rgba(4, 36, 80, 1);
+  background-color: black;
   padding: 20px;
   border: 1px solid #c9c9c9;
   border-radius: 7px;
@@ -159,7 +168,7 @@ footer {
   /* Reset text link default */
   text-decoration: none;
 
-  background-color: #021027;
+  background-color: #eeb902;
   color: #fff;
   padding: 0.5em 1em;
   border-radius: 4px;
@@ -191,7 +200,7 @@ footer {
   justify-content: center;
 
   /* Colors */
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #eeb902;
   color: #fff;
 
   /* Rounded border */
@@ -218,12 +227,12 @@ form h1 {
 
 .customedButton {
   margin-top: 20px;
-  background-color: #0e213e;
+  background-color: rgb(55 65 81);
   padding: 5px;
   border: 1px solid #eeb902;
   border-radius: 7px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-  color: white;
+  color: #eeb902;
   font-weight: 500;
 }
 
@@ -231,7 +240,7 @@ form h1 {
   width: 20px;
   height: 20px;
   display: flex;
-  background-color: #0e213e;
+  background-color: rgb(55 65 81);
   padding: 5px;
   border: 1px solid #eeb902;
   border-radius: 50%;
@@ -255,6 +264,10 @@ button:hover {
 
 form button {
   background-color: #02182b;
+}
+
+form {
+  background-color: black;
 }
 
 form .skills li {
@@ -304,7 +317,7 @@ form .skills .votes {
   margin: 0 0 0.35em;
 }
 
-.coloredTitle {
+.coloredTitle .copyright {
   color: #eeb902;
 }
 
@@ -314,4 +327,8 @@ label {
 
 form .skills li {
   color: white;
+}
+
+.copyright {
+  color: #eeb902;
 }

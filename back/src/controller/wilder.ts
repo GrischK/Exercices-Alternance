@@ -33,7 +33,7 @@ const wilderController: IController = {
 
   getOne: async (req, res) => {
     try {
-      const wilder = await dataSource.getRepository(Wilder).findOneBy({ id: parseInt(req.params.wilderId) });
+      const wilder = await dataSource.getRepository(Wilder).findOneBy({ id: parseInt(req.params.id) });
       res.status(201).send(wilder);
     } catch (err) {
       console.error(err);
